@@ -391,6 +391,17 @@
 			};
 		};
 	};
+
+	rtc: rtc@40044000 {
+		compatible = "renesas,ra-rtc";
+		reg = <0x40044000 0x80>;
+		clocks = <&subclk>;
+		alarms-count = <1>;
+		interrupt-parent = <&nvic>;
+		interrupts = <4 1>, <5 1>, <6 1>;
+		interrupt-names = "cup", "prd", "alm";
+		status = "disabled";
+	};
 };
 
 &ioport0 {
